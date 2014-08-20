@@ -11,7 +11,7 @@ call vundle#begin()
   Plugin 'pangloss/vim-javascript'
   Plugin 'juvenn/mustache.vim'
   Plugin 'tpope/vim-haml'
-  Plugin 'altercation/vim-colors-solorized'
+  Plugin 'altercation/vim-colors-solarized'
 call vundle#end()
 filetype plugin indent on
 syntax enable
