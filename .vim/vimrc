@@ -8,10 +8,15 @@ call vundle#begin()
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
   Plugin 'kien/ctrlp.vim'
+  Plugin 'pangloss/vim-javascript'
+  Plugin 'juvenn/mustache.vim'
+  Plugin 'tpope/vim-haml'
+  Plugin 'altercation/vim-colors-solorized'
 call vundle#end()
 filetype plugin indent on
 syntax enable
-" NOTE: MAKE SURE ~/.vim/backup and ~/.vim/tmp EXIST!
+
+" NOTE: MAKE SURE ~/.vim/backup and ~/.vim/swaps exist!
 " Keep vim backup files in one directory
 set backup
 if (has("win64") || has("win32") || has("win16"))
@@ -28,6 +33,7 @@ elseif isdirectory(expand("~/.vim/backup"))
 else
 	echo "Warning: couldn't find ~/.vim/backup or ~/.vim/tmp. Using normal backup behavior."
 endif
+
 " Set path to where vim was launched. Better use of find.
 set path=$PWD/**
 " No error sounds
@@ -75,5 +81,6 @@ endif
 set ttyfast
 " Enable mouse in all modes
 set mouse=a
+" Solarized dark theme
 set background=dark
 colorscheme solarized
