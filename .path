@@ -6,8 +6,3 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 # Heroku
 export PATH="$PATH:/usr/local/heroku/bin"
-
-# Virtualenvwrapper
-export WORKON_HOME='/home/ochoa/.virtualenvs/'
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-export PIP_RESPECT_VIRTUALENV=true
