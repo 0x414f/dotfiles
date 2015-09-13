@@ -2,19 +2,20 @@
 " http://stackoverflow.com/questions/164847/what-is-in-your-vimrc
 " http://jcoffeehome.google.com/svn-history/r56/trunk/tools/linux/userHome/.vimrc
 set nocompatible
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-  Plugin 'gmarik/Vundle.vim'
-  "Plugin 'scrooloose/nerdtree'
-  "Plugin 'scrooloose/syntastic'
-  Plugin 'kien/ctrlp.vim'
-  Plugin 'pangloss/vim-javascript'
-  Plugin 'juvenn/mustache.vim'
-  Plugin 'tpope/vim-haml'
-  "Plugin 'altercation/vim-colors-solarized'
+Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'tpope/vim-rails'
+Plugin 'dsawardekar/ember.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
 call vundle#end()
+syntax on
 filetype plugin indent on
-syntax enable
 
 " NOTE: MAKE SURE ~/.vim/backup and ~/.vim/swaps exist!
 " Keep vim backup files in one directory
@@ -22,12 +23,12 @@ set backup
 if (has("win64") || has("win32") || has("win16"))
 	\ && isdirectory(expand("%USERPROFILE%/.vim/backups")) 
 	\ && isdirectory(expand("%USERPROFILE%/.vim/swaps"))
-		set backupdir=%USERPROFILE%/.vim/backup
+		set backupdir=%USERPROFILE%/.vim/backups
 		set directory=%USERPROFILE%/.vim/swaps
 		set viminfo+=n%USERPROFILE%/.vim/viminfo
 elseif isdirectory(expand("~/.vim/backups")) 
 	\ && isdirectory(expand("~/.vim/swaps"))
-		set backupdir=~/.vim/backup
+		set backupdir=~/.vim/backups
 		set directory=~/.vim/swaps
 		set viminfo+=n~/.vim/viminfo
 else
@@ -72,15 +73,37 @@ if has("autocmd")
 	" Treat .json files as .js
 	autocmd BufNewFile,BufRead *.json setfiletype json syntax=javascript
 endif
+
 " Use relative line numbers
-if exists("&relativenumber")
-	set relativenumber
-	au BufReadPost * set relativenumber
-endif
+"if exists("&relativenumber")
+"	set relativenumber
+" au BufReadPost * set relativenumber
+"endif
+
+set relativenumber
+set number
+
 " Vroooom. Check what this does later
 set ttyfast
 " Enable mouse in all modes
 set mouse=a
-" Solarized dark theme
-"set background=dark
-"colorscheme solarized
+
+colorscheme slate
+
+" Remove trailing whitespace before a save
+autocmd FileType c,scss,cpp,python,ruby,java,javascript,html,css,haml,coffee,bash,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
+
+autocmd BufWritePre *.hjs :%s/\s\+$//e
+
+" Highlight trailing whitespace
+:highlight ExtraWhitespace ctermbg=darkgreen guibg=lightgreen
+
+" Folding
+set foldmethod=indent
+set foldlevel=1
+set nofoldenable
+
+syntax enable
+
+" I don't like the last valid line to be highlighted.
+set colorcolumn=81
