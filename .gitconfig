@@ -1,5 +1,8 @@
 [alias]
 
+	# Group grep output
+	g = grep --break --heading --line-number
+
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
 
@@ -145,3 +148,7 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+
+[grep]
+
+	lineNumber = true
