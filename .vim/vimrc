@@ -8,12 +8,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'tpope/vim-rails'
-Plugin 'dsawardekar/ember.vim'
-Plugin 'wincent/Command-T'
-Plugin 'mileszs/ack.vim'
-Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'morhetz/gruvbox'
 call vundle#end()
 syntax on
 filetype plugin indent on
@@ -33,7 +29,7 @@ elseif isdirectory(expand("~/.vim/backups"))
 		set directory=~/.vim/swaps
 		set viminfo+=n~/.vim/viminfo
 else
-	echo "Warning: couldn't find ~/.vim/backup or ~/.vim/tmp. Using normal backup behavior."
+	echo "Warning: couldn't find ~/.vim/backups or ~/.vim/swaps. Using normal backup behavior."
 endif
 
 " Set path to where vim was launched. Better use of find.
@@ -88,8 +84,6 @@ set foldlevel=1
 set nofoldenable
 " I don't like the last valid line to be highlighted.
 set colorcolumn=81
-" NERDTree on startup
-autocmd vimenter * NERDTree
 " System copy paste
 vmap <Leader>y "+y
 vmap <Leader>d "+d
@@ -109,5 +103,5 @@ endfunction
 vmap <silent> <expr> p <sid>Repl()
 " Misc
 let mapleader = "\<Space>"
-colorscheme slate
+colorscheme gruvbox
 syntax enable
