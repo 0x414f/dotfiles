@@ -1,8 +1,0 @@
-# Vex
-export PATH="$PATH:$HOME/.local/bin"
-
-# Rvm
-export PATH="$PATH:$HOME/.rvm/bin"
-
-# Heroku
-export PATH="$PATH:/usr/local/heroku/bin"
