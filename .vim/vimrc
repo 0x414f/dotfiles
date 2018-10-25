@@ -74,7 +74,7 @@ set ttyfast
 " Enable mouse in all modes
 set mouse=a
 " Remove trailing whitespace before a save
-autocmd FileType c,scss,cpp,python,ruby,java,javascript,html,css,haml,coffee,bash,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType go,php,c,scss,cpp,python,ruby,java,javascript,html,css,haml,coffee,bash,yaml autocmd BufWritePre <buffer> :%s/\s\+$//e
 autocmd BufWritePre *.hjs :%s/\s\+$//e
 " Folding
 set foldmethod=indent
