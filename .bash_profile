@@ -1,3 +1,10 @@
+if [ -n "$BASH_PROFILE_SOURCED" ]; then
+  echo "$(pwd)/.bash_profile has already been sourced."
+  return
+else 
+  BASH_PROFILE_SOURCED=1
+fi
+
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
 # * ~/.extra can be used for other settings you don’t want to commit.
