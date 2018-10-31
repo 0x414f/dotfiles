@@ -6,7 +6,7 @@ else
 fi
 
 if [ -z "$TMUX" ]; then
-  tmux attach || tmux new -n !
+  tmux attach || tmux new -s !
 fi
 
 # Load the shell dotfiles, and then some:
