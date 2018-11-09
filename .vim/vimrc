@@ -99,7 +99,9 @@ function! s:Repl()
   return "p@=RestoreRegister()\<cr>"
 endfunction
 vmap <silent> <expr> p <sid>Repl()
+" Theme
+set background=dark
+colorscheme gruvbox
 " Misc
 let mapleader = "\<Space>"
-colorscheme gruvbox
 syntax enable
