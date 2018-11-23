@@ -25,3 +25,6 @@ export GREP_OPTIONS="--color=auto";
 export HOMEBREW_CASK_OPTS="--appdir=/Applications";
 
 export NVM_DIR="$HOME/.nvm"
+
+# Set less tab size to 4
+export LESS="-R --tabs 4"
