@@ -244,3 +244,11 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+function mux() {
+  if [ -z "$TMUX" ]; then
+    tmux new -A -s "$@"
+  else
+    echo "Already running inside tmux..."
+  fi
+}
