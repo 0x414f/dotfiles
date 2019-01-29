@@ -38,4 +38,15 @@ set convert-meta off
 
 # Use vi in command prompt
 set editing-mode vi
-set keymap vi-command
+set keymap vi
+
+# Remap vi escape
+$if mode=vi
+  set keymap vi-insert
+  "jk": vi-movement-mode 
+$endif
+
+# Display insert/command mode
+set show-mode-in-prompt on
+set vi-ins-mode-string \1\e[6 q\2
+set vi-cmd-mode-string \1\e[2 q\2

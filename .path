@@ -1,3 +1,10 @@
-export PATH="/usr/local/sbin:$PATH"
+#!/usr/bin/env bash
 
-export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+# Only add to $PATH not already in $PATH
+function path() {
+	[[ ! -z "$1" ]] && [[ ":$PATH:" != *":$1:"* ]] && PATH="$PATH:$1"
+}
+
+path "/usr/local/sbin"
+path "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+path "$HOME/.rvm/bin"

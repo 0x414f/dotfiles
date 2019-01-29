@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Simple calculator
 function calc() {
 	local result="";
@@ -248,7 +250,5 @@ function tre() {
 function mux() {
   if [ -z "$TMUX" ]; then
     tmux new -A -s "$@"
-  else
-    echo "Already running inside tmux..."
   fi
 }
