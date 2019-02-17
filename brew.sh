@@ -34,6 +34,7 @@ brew install php
 # Install other useful binaries.
 brew install git
 brew cask install quicklook-json
+brew cask install qlstephen
 
 # Remove outdated versions from the cellar.
 brew cleanup
