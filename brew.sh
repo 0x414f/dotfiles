@@ -33,6 +33,7 @@ brew install php
 
 # Install other useful binaries.
 brew install git
+brew install tree
 brew cask install quicklook-json
 brew cask install qlstephen
 
