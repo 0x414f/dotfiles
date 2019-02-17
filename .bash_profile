@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [ -n "$BASH_PROFILE_SOURCED" ]; then
   echo "$(pwd)/.bash_profile has already been sourced."
   return

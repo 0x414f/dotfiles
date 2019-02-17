@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Goodbye VIM
 alias vim=nvim
 

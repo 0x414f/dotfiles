@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 if [ -n "$BASHRC_SOURCED" ]; then
   echo "$(pwd)/.bashrc has already been sourced."
   return
