@@ -50,7 +50,7 @@ set ignorecase
 set smartcase
 set hlsearch
 
-set colorcolumn=81,91
+set colorcolumn=91
 
 set tabstop=2
 set shiftwidth=2
