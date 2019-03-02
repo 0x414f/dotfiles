@@ -63,6 +63,17 @@
 	# List contributors with number of commits
 	contributors = shortlog --summary --numbered
 
+	# Fetch and rebase
+	r = !"git fetch origin master && git rebase origin/master"
+
+	sr = !"git stash -u && git r && git stash pop"
+
+	# Fetch, rebase and push
+	rp = !"git r && git push origin $(git rev-parse --abbrev-ref HEAD)"
+
+	# Group commits from merges, I think?
+	what-changed = log --name-status origin/master -m --first-parent --merges
+
 [apply]
 
 	# Detect whitespace errors when applying a patch
