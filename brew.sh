@@ -35,6 +35,7 @@ brew install php
 brew install git
 brew install tree
 brew install fzf
+brew install tldr
 brew cask install quicklook-json
 brew cask install qlstephen
 
