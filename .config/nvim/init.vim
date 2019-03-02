@@ -28,14 +28,12 @@ Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'w0rp/ale'
 Plug 'hhvm/vim-hack'
-"Plug 'majutsushi/tagbar'
-"Plug 'xolox/vim-easytags'
-"Plug 'xolox/vim-misc'
 Plug 'tpope/vim-surround'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-abolish'
 call plug#end()
 
 set background=dark
