@@ -1,7 +1,11 @@
 {
+	"telemetry.enableTelemetry": false,
+	"editor.minimap.enabled": false,
+	"workbench.colorTheme": "Gruvbox Dark (Hard)",
+	"workbench.activityBar.visible": false,
 	"vim.insertModeKeyBindings": [
 		{
-				"before": ["j", "K"],
+				"before": ["j", "k"],
 				"after": ["<Esc>"]
 		}
 	],
