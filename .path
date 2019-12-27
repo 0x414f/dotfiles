@@ -1,14 +1,9 @@
 #!/usr/bin/env zsh
 
-# Only add to $PATH not already in $PATH
-function path() {
-	[[ ! -z "$1" ]] && [[ ":$PATH:" != *":$1:"* ]] && export PATH="$1:$PATH"
-}
-
-path "/usr/local/sbin"
-path "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-path "$HOME/.rvm/bin"
+export PATH="/usr/local/sbin:$PATH";
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH";
+export PATH="$HOME/.rvm/bin:$PATH";
 
 # Use gnu-sed over the default sed
-path "/usr/local/opt/gnu-sed/libexec/gnubin"
-path "/usr/local/opt/coreutils/libexec/gnubin"
+export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH";
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH";
