@@ -1,0 +1,43 @@
+#!/usr/bin/env zsh
+
+function git_prompt() {
+	local gitStatus='';
+	local branchName='';
+
+	# Check if the current directory is in a Git repository.
+	git rev-parse --is-inside-work-tree &>/dev/null || return;
+
+	# Check for what branch we’re on.
+	# Get the short symbolic ref. If HEAD isn’t a symbolic ref, get a
+	# tracking remote branch or tag. Otherwise, get the
+	# short SHA for the latest commit, or give up.
+	branchName="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
+		git describe --all --exact-match HEAD 2> /dev/null || \
+		git rev-parse --short HEAD 2> /dev/null || \
+		echo '(unknown)')";
+
+	# Check for uncommitted changes in the index.
+	if ! $(git diff --quiet --ignore-submodules --cached); then
+		gitStatus+='+';
+	fi;
+	# Check for unstaged changes.
+	if ! $(git diff-files --quiet --ignore-submodules --); then
+		gitStatus+='!';
+	fi;
+	# Check for untracked files.
+	if [ -n "$(git ls-files --others --exclude-standard)" ]; then
+		gitStatus+='?';
+	fi;
+	# Check for stashed files.
+	if $(git rev-parse --verify refs/stash &>/dev/null); then
+		gitStatus+='$';
+	fi;
+
+	[ -n "${gitStatus}" ] && gitStatus=" [${gitStatus}]";
+
+	echo -n " %F{white}on %F{yellow}${branchName}%F{blue}${gitStatus}";
+}
+
+PROMPT='
+%F{green}%~$(git_prompt)
+%F{white}> %F{reset}'
