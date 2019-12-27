@@ -33,11 +33,19 @@ function git_prompt() {
 		gitStatus+='$';
 	fi;
 
-	[ -n "${gitStatus}" ] && gitStatus=" [${gitStatus}]";
+	[ -n "${gitStatus}" ] && gitStatus="[${gitStatus}]";
 
-	echo -n " %F{white}on %F{yellow}${branchName}%F{blue}${gitStatus}";
+	echo -n "${white}on ${purple}${branchName} ${blue}${gitStatus}";
 }
 
+red='%F{167}';
+green='%F{142}';
+yellow='%F{214}';
+blue='%F{109}';
+purple='%F{175}';
+orange='%F{208}';
+white='%F{15}';
+
 PROMPT='
-%F{green}%~$(git_prompt)
-%F{white}> %F{reset}'
+${orange}%n ${white}at ${yellow}%m ${white}in ${green}%~ $(git_prompt)
+${white}> %F{reset}'
