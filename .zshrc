@@ -57,4 +57,4 @@ preexec() { echo -ne '\e[6 q' ;} # Use beam shape cursor for each new prompt.
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
 # Set default tabsize
-tabs -2
+tabs -4
