@@ -8,10 +8,7 @@ unset file;
 
 eval "$(jump shell zsh)"
 
-source "/usr/local/share/antigen/antigen.zsh"
-antigen bundle lukechilds/zsh-nvm
-antigen bundle zsh-users/zsh-completions
-antigen apply
+source ~/.zsh_plugins
 
 # Use vi mode in command line
 bindkey -v
@@ -68,5 +65,3 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[6 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[6 q' ;} # Use beam shape cursor for each new prompt.
-
-[ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
