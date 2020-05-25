@@ -35,17 +35,18 @@ function git_prompt() {
 
 	[ -n "${gitStatus}" ] && gitStatus="[${gitStatus}]";
 
-	echo -n "${white}on ${purple}${branchName} ${blue}${gitStatus}";
+	echo -n "${prompt_white}on ${prompt_purple}${branchName} ${prompt_blue}${gitStatus}";
 }
 
-red='%F{167}';
-green='%F{142}';
-yellow2='%F{214}';
-blue='%F{109}';
-purple='%F{175}';
-orange='%F{208}';
-white='%F{15}';
+prompt_red='%F{167}';
+prompt_green='%F{142}';
+prompt_yellow='%F{214}';
+prompt_blue='%F{109}';
+prompt_purple='%F{175}';
+prompt_orange='%F{208}';
+prompt_white='%F{15}';
 
-PROMPT='
-${orange}%n ${white}at ${yellow2}%m ${red}%D{%Y-%m-%f} %D{%H:%M:%S} ${white}in ${green}%~ $(git_prompt)
-${white}> %F{reset}'
+PROMPT=$'\n'
+PROMPT+='${prompt_orange}%n ${prompt_white}at ${prompt_yellow}%m '
+PROMPT+='${prompt_red}%D{%Y-%m-%f} %D{%H:%M:%S} ${prompt_white}in ${prompt_green}%~ $(git_prompt)'$'\n'
+PROMPT+='${prompt_white}> %F{reset}'
