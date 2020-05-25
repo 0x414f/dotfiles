@@ -1,25 +1,35 @@
 {
-	"telemetry.enableTelemetry": false,
-	"editor.minimap.enabled": false,
-	"workbench.colorTheme": "Gruvbox Dark (Hard)",
+	"search.exclude": {
+		"**/.git": true,
+		"**/node_modules": true,
+		"**/bower_components": true,
+		"**/tmp": true,
+		"**/.history": true
+	},
+	"workbench.colorTheme": "Gruvbox Dark (Soft)",
 	"workbench.activityBar.visible": false,
+	"window.openFilesInNewWindow": "on",
+	"telemetry.enableTelemetry": false,
+	"vim.useSystemClipboard": true,
 	"vim.insertModeKeyBindings": [
 		{
-				"before": ["j", "k"],
-				"after": ["<Esc>"]
+			"before": ["j", "k"],
+			"after": ["<Esc>"]
 		}
 	],
 	"vim.visualModeKeyBindingsNonRecursive": [
 		{
-				"before": [
-						"p"
-				],
-				"after": [
-						"p",
-						"g",
-						"v",
-						"y"
-				]
+			"before": ["p"],
+			"after": ["p", "g", "v", "y"]
 		}
-	]
+	],
+	"editor.minimap.renderCharacters": false,
+	"editor.rulers": [91],
+	"editor.minimap.enabled": false,
+	"editor.tabSize": 2,
+	"editor.scrollBeyondLastLine": true,
+	"editor.formatOnSave": false,
+	"editor.codeActionsOnSave": {
+		"source.fixAll": true
+	}
 }
