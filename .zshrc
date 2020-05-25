@@ -6,6 +6,13 @@ for file in ~/.{path,prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
+eval "$(jump shell zsh)"
+
+source "/usr/local/share/antigen/antigen.zsh"
+antigen bundle lukechilds/zsh-nvm
+antigen bundle zsh-users/zsh-completions
+antigen apply
+
 # Use vi mode in command line
 bindkey -v
 
@@ -40,6 +47,8 @@ setopt hist_save_no_dups         # Don't write duplicate entries in the history 
 setopt hist_reduce_blanks        # Remove superfluous blanks before recording entry.
 setopt hist_verify               # Don't execute immediately upon history expansion.
 
+unsetopt prompt_sp
+
 # Change cursor shape for different vi modes.
 zle-keymap-select() {
 	if [[ ${KEYMAP} == vicmd ]] ||
@@ -61,6 +70,3 @@ echo -ne '\e[6 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[6 q' ;} # Use beam shape cursor for each new prompt.
 
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
-
-# Set default tabsize
-tabs -4

@@ -40,12 +40,12 @@ function git_prompt() {
 
 red='%F{167}';
 green='%F{142}';
-yellow='%F{214}';
+yellow2='%F{214}';
 blue='%F{109}';
 purple='%F{175}';
 orange='%F{208}';
 white='%F{15}';
 
 PROMPT='
-${orange}%n ${white}at ${yellow}%m ${white}in ${green}%~ $(git_prompt)
+${orange}%n ${white}at ${yellow2}%m ${red}%D{%Y-%m-%f} %D{%H:%M:%S} ${white}in ${green}%~ $(git_prompt)
 ${white}> %F{reset}'

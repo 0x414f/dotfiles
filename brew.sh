@@ -45,7 +45,7 @@ brew cask install quicklook-json
 brew cask install qlstephen
 brew install vbindiff
 brew install zopfli
-brew install autojump
+brew install jump
 brew install jq
 
 # Remove outdated versions from the cellar.

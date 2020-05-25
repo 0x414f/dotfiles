@@ -30,18 +30,21 @@ endif
 call plug#begin($VIMHOME . '/plug')
 Plug '/usr/local/opt/fzf'
 Plug 'airblade/vim-gitgutter'
+Plug 'sheerun/vim-polyglot'
 Plug 'hhvm/vim-hack'
+Plug 'pangloss/vim-javascript'
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'vim-airline/vim-airline'
+Plug 'vim-ruby/vim-ruby'
 Plug 'w0rp/ale'
 call plug#end()
 
 set background=dark
+let g:gruvbox_contrast_dark = 'medium'
 syntax on
 colorscheme gruvbox
 
@@ -100,11 +103,14 @@ let g:ale_fixers = {
 	\ 'hack': ['hackfmt']
 \}
 
-" Press `K` to view the type in the gutter
 nnoremap <silent> gt :ALEHover<CR>
-" Type `gd` to go to definition
 nnoremap <silent> gd :ALEGoToDefinition<CR>
-nnoremap gs :ALESymbolSearch
+nnoremap gs :ALESymbolSearch<Space>
+nnoremap gn :ALENext<CR>
+
+nnoremap gp :FZF<CR>
+
+autocmd BufNewFile,BufRead *.php set syntax=hack
 
 " Show type on hover in a floating bubble
 if v:version >= 801
@@ -129,6 +135,12 @@ function! s:Repl()
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+
 " Map escape to 'jk'
 inoremap jk <esc>
 " Map `Escape` to ‘nothing’ in Normal, Visual, Select, Operator-pending modes
@@ -136,12 +148,20 @@ noremap <esc> <nop>
 " Map `Escape` to ‘nothing’ in Insert and Command modes
 noremap! <esc> <nop>
 
-" Reload vimrc after saving and keep cursor position
-if !exists('*ReloadVimrc')
-	fun! ReloadVimrc()
-		let save_cursor = getcurpos()
-		source $MYVIMRC
-		call setpos('.', save_cursor)
-	endfun
+" Woah this makes everything look 1000x better
+if has('termguicolors')
+  set termguicolors
 endif
-autocmd! BufWritePost $MYVIMRC call ReloadVimrc()
+
+set splitbelow
+set splitright
+
+let mapleader = ' '
+let maplocalleader = ' '
+
+nnoremap <silent> <Leader>+ :exe "resize " . (winheight(0) * 3/2)<CR>
+nnoremap <silent> <Leader>- :exe "resize " . (winheight(0) * 2/3)<CR>
+
+noremap <C-n> :nohl<CR>
+
+set cursorline
