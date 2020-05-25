@@ -46,9 +46,3 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
-
-# Brew devs mix tabs and spaces :|
-alias brew="tabs -8 && brew"
-
-# Ruby :3
-alias ruby="ruby -e \$'require \\'active_support/core_ext\\''"
