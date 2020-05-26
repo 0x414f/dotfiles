@@ -2,6 +2,9 @@
 
 cask_args appdir: "/Applications"
 
+# Why do I need to tap?
+tap "getantibody/tap"
+
 # Install GnuPG to enable PGP-signing commits.
 brew "gnupg"
 
