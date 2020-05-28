@@ -4,6 +4,16 @@ set -e
 
 DIR=$(cd -P -- "$(dirname -- "$0")" && printf '%s\n' "$(pwd -P)")
 
+hash gcc 2>/dev/null || {
+  echo >&2 "You need to install Xcode"
+  exit 1
+}
+
+hash brew 2>/dev/null || {
+  echo >&2 "You need to install Homebrew"
+  exit 1
+}
+
 echo 'Bundling brew...'
 brew update
 brew bundle
