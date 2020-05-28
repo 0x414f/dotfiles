@@ -12,6 +12,8 @@ ln -sf $DIR/.prompt ~/.prompt
 ln -sf $DIR/.tmux.conf ~/.tmux.conf
 ln -sf $DIR/.vimrc ~/.vimrc
 ln -sf $DIR/.zshrc ~/.zshrc
+
+mkdir -p ~/Library/Application\ Support/Code/User/
 ln -sf $DIR/.vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
 mkdir -p ~/.config/nvim/

@@ -4,6 +4,7 @@ cask_args appdir: "/Applications"
 
 # Why do I need to tap?
 tap "getantibody/tap"
+tap "homebrew/cask-fonts"
 
 # Install GnuPG to enable PGP-signing commits.
 brew "gnupg"
@@ -45,3 +46,4 @@ cask "iterm2"
 cask "quicklook-json"
 cask "qlstephen"
 cask "rectangle"
+cask "visual-studio-code"

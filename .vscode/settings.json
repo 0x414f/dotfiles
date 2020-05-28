@@ -9,6 +9,7 @@
 	"workbench.colorTheme": "Gruvbox Dark (Soft)",
 	"workbench.activityBar.visible": false,
 	"telemetry.enableTelemetry": false,
+	"telemetry.enableCrashReporter": false,
 
 	"vim.foldfix": true,
 	"vim.autoSwitchInputMethod.enable": true,
@@ -38,6 +39,8 @@
 	"editor.tabSize": 2,
 	"editor.scrollBeyondLastLine": true,
 	"editor.formatOnSave": false,
+	"editor.suggestSelection": "first",
+	"vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
 	"debug.toolBarLocation": "docked",
 
