@@ -5,6 +5,9 @@ set -e
 DIR=$(cd -P -- "$(dirname -- "$0")" && printf '%s\n' "$(pwd -P)")
 DOT="$DIR/dot"
 
+# No thank you
+touch ~/.hushlogin
+
 ln -sf $DOT/aliases ~/.aliases
 ln -sf $DOT/exports ~/.exports
 ln -sf $DOT/functions ~/.functions
