@@ -1,9 +1,10 @@
 #!/usr/bin/env zsh
 
-export PATH="/usr/local/sbin:$PATH";
-export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH";
-export PATH="$HOME/.rvm/bin:$PATH";
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 
-# Use gnu-sed over the default sed
-#export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH";
-#export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH";
+# Prefer brew python
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
+# Prefer brew ruby
+export PATH="/usr/local/opt/ruby/bin:$PATH"

@@ -23,6 +23,8 @@ brew "tmux"
 brew "php"
 brew "git"
 brew "git-lfs"
+brew "ruby"
+brew "python"
 
 # Install other useful binaries.
 brew "getantibody/tap/antibody"
