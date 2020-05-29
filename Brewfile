@@ -45,6 +45,7 @@ brew "bat"
 brew "exa"
 
 cask "alfred"
+cask "font-fira-code"
 cask "font-source-code-pro"
 cask "iterm2"
 cask "quicklook-json"
