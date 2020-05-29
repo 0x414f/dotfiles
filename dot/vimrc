@@ -1,19 +1,19 @@
 let $VIMHOME = $HOME . '/.vim'
 
 if !isdirectory(expand($VIMHOME . '/backups'))
-	call mkdir($VIMHOME . '/backups', 'p', 0700)
+  call mkdir($VIMHOME . '/backups', 'p', 0700)
 endif
 
 if !isdirectory(expand($VIMHOME . '/undos'))
-	call mkdir($VIMHOME . '/undos', 'p', 0700)
+  call mkdir($VIMHOME . '/undos', 'p', 0700)
 endif
 
 if !isdirectory(expand($VIMHOME . '/swaps'))
-	call mkdir($VIMHOME . '/swaps', 'p', 0700)
+  call mkdir($VIMHOME . '/swaps', 'p', 0700)
 endif
 
 if !isdirectory(expand($VIMHOME . '/autoload'))
-	call mkdir($VIMHOME . '/autoload', 'p', 0700)
+  call mkdir($VIMHOME . '/autoload', 'p', 0700)
 endif
 
 set directory=$VIMHOME/swaps
@@ -24,7 +24,7 @@ set backup
 
 " Load vim-plug
 if empty(glob($VIMHOME . '/autoload/plug.vim'))
-	execute '!curl -fLo ' . $VIMHOME . '/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
+  execute '!curl -fLo ' . $VIMHOME . '/autoload/plug.vim https://raw.github.com/junegunn/vim-plug/master/plug.vim'
 endif
 
 call plug#begin($VIMHOME . '/plug')
@@ -99,8 +99,8 @@ let g:ale_fix_on_save = 1
 let g:ale_completion_enabled = 1
 
 let g:ale_fixers = {
-	\ '*': ['remove_trailing_lines', 'trim_whitespace', 'prettier'],
-	\ 'hack': ['hackfmt']
+  \ '*': ['remove_trailing_lines', 'trim_whitespace', 'prettier'],
+  \ 'hack': ['hackfmt']
 \}
 
 nnoremap <silent> gt :ALEHover<CR>
@@ -114,9 +114,9 @@ autocmd BufNewFile,BufRead *.php set syntax=hack
 
 " Show type on hover in a floating bubble
 if v:version >= 801
-	set balloonevalterm
-	let g:ale_set_balloons = 1
-	let balloondelay = 250
+  set balloonevalterm
+  let g:ale_set_balloons = 1
+  let balloondelay = 250
 endif
 
 " System copy
@@ -125,13 +125,13 @@ nmap <Leader>y "+y
 
 " Don't replace buffer after visual paste
 function! RestoreRegister()
-	let @" = s:restore_reg
-	return ''
+  let @" = s:restore_reg
+  return ''
 endfunction
 
 function! s:Repl()
-	let s:restore_reg = @"
-	return "p@=RestoreRegister()\<cr>"
+  let s:restore_reg = @"
+  return "p@=RestoreRegister()\<cr>"
 endfunction
 vmap <silent> <expr> p <sid>Repl()
 
