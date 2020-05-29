@@ -6,6 +6,7 @@
     "**/tmp": true,
     "**/.history": true
   },
+  "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Gruvbox Dark (Soft)",
   "workbench.activityBar.visible": false,
   "telemetry.enableTelemetry": false,
