@@ -128,7 +128,13 @@ function tre() {
 
 # Create or attach to tmux session
 function mux() {
+	if [ $# -eq 0 ]; then
+		NAME="!"
+	else
+		NAME=$1
+	fi
+
 	if [ -z "$TMUX" ]; then
-		tmux new -A -s "$@"
+		tmux new -A -s $NAME
 	fi
 }
