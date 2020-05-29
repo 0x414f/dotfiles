@@ -41,6 +41,8 @@ brew "vbindiff"
 brew "zopfli"
 brew "jump"
 brew "jq"
+brew "bat"
+brew "exa"
 
 cask "alfred"
 cask "font-source-code-pro"
