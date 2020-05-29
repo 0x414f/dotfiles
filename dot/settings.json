@@ -40,11 +40,10 @@
   "editor.scrollBeyondLastLine": true,
   "editor.formatOnSave": false,
   "editor.suggestSelection": "first",
+  "editor.foldingStrategy": "indentation",
+
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-
-  "debug.toolBarLocation": "docked",
-
   "window.openFilesInNewWindow": "on",
   "window.titleBarStyle": "native",
-  "customizeUI.titleBar": "frameless",
+  "customizeUI.titleBar": "frameless"
 }
