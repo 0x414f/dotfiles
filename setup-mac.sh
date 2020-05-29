@@ -25,7 +25,7 @@ source setup-dotfiles.sh
 echo
 
 echo 'Bundling zsh plugins...'
-antibody bundle < $DIR/.zsh_plugins > ~/.zsh_plugins
+antibody bundle < $DIR/dot/zsh_plugins > ~/.zsh_plugins
 antibody update
 echo
 

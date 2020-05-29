@@ -3,19 +3,20 @@
 set -e
 
 DIR=$(cd -P -- "$(dirname -- "$0")" && printf '%s\n' "$(pwd -P)")
+DOT="$DIR/dot"
 
-ln -sf $DIR/.aliases ~/.aliases
-ln -sf $DIR/.exports ~/.exports
-ln -sf $DIR/.functions ~/.functions
-ln -sf $DIR/.path ~/.path
-ln -sf $DIR/.prompt ~/.prompt
-ln -sf $DIR/.tmux.conf ~/.tmux.conf
-ln -sf $DIR/.vimrc ~/.vimrc
-ln -sf $DIR/.zshrc ~/.zshrc
-ln -sf $DIR/gitignore ~/.gitignore
+ln -sf $DOT/aliases ~/.aliases
+ln -sf $DOT/exports ~/.exports
+ln -sf $DOT/functions ~/.functions
+ln -sf $DOT/path ~/.path
+ln -sf $DOT/prompt ~/.prompt
+ln -sf $DOT/tmux.conf ~/.tmux.conf
+ln -sf $DOT/vimrc ~/.vimrc
+ln -sf $DOT/zshrc ~/.zshrc
+ln -sf $DOT/gitignore ~/.gitignore
 
 mkdir -p ~/Library/Application\ Support/Code/User/
-ln -sf $DIR/.vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -sf $DOT/settings.json ~/Library/Application\ Support/Code/User/settings.json
 
 mkdir -p ~/.config/nvim/
-ln -sf $DIR/.config/nvim/init.vim ~/.config/nvim/init.vim
+ln -sf $DOT/init.vim ~/.config/nvim/init.vim
