@@ -25,8 +25,14 @@ source setup-dotfiles.sh
 echo
 
 echo 'Bundling zsh plugins...'
-antibody bundle < $DIR/dot/zsh_plugins > ~/.zsh_plugins
+
+# Set lazy load option before zsh-nvm is sourced.
+# Not sure if order actually matters.
+echo "export NVM_LAZY_LOAD=true" > ~/.zsh_plugins
+
+antibody bundle < $DIR/dot/zsh_plugins >> ~/.zsh_plugins
 antibody update
+
 echo
 
 echo 'Setting zsh default shell...'
