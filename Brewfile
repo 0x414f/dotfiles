@@ -4,7 +4,6 @@ cask_args appdir: "/Applications"
 
 # Why do I need to tap?
 tap "getantibody/tap"
-tap "homebrew/cask-fonts"
 
 # Install GnuPG to enable PGP-signing commits.
 brew "gnupg"
@@ -44,14 +43,7 @@ brew "jq"
 brew "bat"
 brew "exa"
 
-# Needed to install font-inconsolata. Weird.
-# https://github.com/Homebrew/homebrew-cask-fonts/issues/2012
-brew "svn"
-
 cask "alfred"
-cask "font-fira-code"
-cask "font-inconsolata"
-cask "font-source-code-pro"
 cask "iterm2"
 cask "quicklook-json"
 cask "qlstephen"

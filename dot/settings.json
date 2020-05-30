@@ -42,8 +42,7 @@
   "editor.formatOnSave": false,
   "editor.suggestSelection": "first",
   "editor.foldingStrategy": "indentation",
-  "editor.fontFamily": "Fira Code",
-  "editor.fontSize": 13,
+  "editor.fontFamily": "Monaco",
   "editor.fontWeight": "500",
 
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
