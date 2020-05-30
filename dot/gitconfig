@@ -71,6 +71,19 @@
   # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
   trustctime = false
 
+  # Use commit graph
+  commitGraph = true
+
+[fetch]
+
+  # Update commit graph on fetch
+  writeCommitGraph = true
+
+[gc]
+
+  # Rewrite the commit graph on gc
+  writeCommitGraph = true
+
 [color]
 
   # Use colors in Git commands that are capable of colored output when
