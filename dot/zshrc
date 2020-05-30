@@ -23,6 +23,20 @@ bindkey "^?" backward-delete-char
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^v' edit-command-line
 
+autoload -Uz compinit
+
+() {
+  setopt extended_glob local_options
+
+  # https://gist.github.com/ctechols/ca1035271ad134841284
+  if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
+    compinit
+    touch ~/.zcompdump
+  else
+    compinit -C
+  fi
+}
+
 setopt prompt_subst
 setopt auto_menu
 setopt complete_in_word
