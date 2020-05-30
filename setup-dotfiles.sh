@@ -17,6 +17,7 @@ ln -sf $DOT/tmux.conf ~/.tmux.conf
 ln -sf $DOT/vimrc ~/.vimrc
 ln -sf $DOT/zshrc ~/.zshrc
 ln -sf $DOT/gitignore ~/.gitignore
+ln -sf $DOT/gitconfig ~/.gitconfig
 
 mkdir -p ~/Library/Application\ Support/Code/User/
 ln -sf $DOT/settings.json ~/Library/Application\ Support/Code/User/settings.json
