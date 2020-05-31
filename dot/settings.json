@@ -6,9 +6,17 @@
     "**/tmp": true,
     "**/.history": true
   },
+
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Gruvbox Dark (Soft)",
   "workbench.activityBar.visible": false,
+  "keyboard.touchbar.ignored": [
+    "workbench.action.navigateBack",
+    "workbench.action.navigateForward",
+    "workbench.action.debug.start",
+    "workbench.action.debug.run"
+  ],
+
   "telemetry.enableTelemetry": false,
   "telemetry.enableCrashReporter": false,
 
