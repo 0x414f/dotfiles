@@ -21,6 +21,7 @@ ln -sf $DOT/gitconfig ~/.gitconfig
 
 mkdir -p ~/Library/Application\ Support/Code/User/
 ln -sf $DOT/settings.json ~/Library/Application\ Support/Code/User/settings.json
+ln -sf $DOT/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
 
 mkdir -p ~/.config/nvim/
 ln -sf $DOT/init.vim ~/.config/nvim/init.vim
