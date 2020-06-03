@@ -10,6 +10,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Gruvbox Dark (Soft)",
   "workbench.activityBar.visible": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
   "keyboard.touchbar.ignored": [
     "workbench.action.navigateBack",
     "workbench.action.navigateForward",
@@ -56,5 +57,6 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "window.openFilesInNewWindow": "on",
   "window.titleBarStyle": "native",
-  "customizeUI.titleBar": "frameless"
+  "customizeUI.titleBar": "frameless",
+  "files.hotExit": "onExitAndWindowClose",
 }
