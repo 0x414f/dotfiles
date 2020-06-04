@@ -59,4 +59,5 @@
   "window.titleBarStyle": "native",
   "customizeUI.titleBar": "frameless",
   "files.hotExit": "onExitAndWindowClose",
+  "files.trimTrailingWhitespace": true,
 }
