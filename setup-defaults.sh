@@ -29,16 +29,23 @@ defaults write com.apple.dock orientation left
 defaults write com.apple.dock tilesize -int 32
 
 # Make tab available in modal dialogs
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+defaults write -g AppleKeyboardUIMode -int 3
 
 # Show ~/Library
 chflags nohidden ~/Library
 
-# Disable Spotlight shortcut
-/usr/libexec/PlistBuddy \
-  -c "Set AppleSymbolicHotKeys:64:enabled false" \
-	~/Library/Preferences/com.apple.symbolichotkeys.plist
+pref_edit() {
+  /usr/libexec/PlistBuddy -c "$1" ~/Library/Preferences/$2
+}
 
-/usr/libexec/PlistBuddy \
-  -c "Set AppleSymbolicHotKeys:65:enabled false" \
-	~/Library/Preferences/com.apple.symbolichotkeys.plist
+# Disable Spotlight shortcut
+pref_edit "Set AppleSymbolicHotKeys:64:enabled false" com.apple.symbolichotkeys.plist
+pref_edit "Set AppleSymbolicHotKeys:65:enabled false" com.apple.symbolichotkeys.plist
+
+# Disable dock hiding
+pref_edit "Set AppleSymbolicHotKeys:52:enabled false" com.apple.symbolichotkeys.plist
+
+# Disable VoiceOver
+pref_edit "Set AppleSymbolicHotKeys:59:enabled false" com.apple.symbolichotkeys.plist
+
+unset -f pref_edit
