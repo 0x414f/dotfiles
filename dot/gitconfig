@@ -161,3 +161,7 @@
 [grep]
 
   lineNumber = true
+
+[user]
+	name = Antonio de Jesus Ochoa Solano
+	email = antoniodejesusochoasolano@gmail.com
