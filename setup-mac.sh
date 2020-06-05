@@ -18,22 +18,22 @@ echo 'Bundling brew...'
 brew update
 brew bundle
 brew cleanup
-echo
 
 echo 'Linking dotfiles...'
 source setup-dotfiles.sh
-echo
+
+echo 'Setting preferences...'
+source setup-defaults.sh
+
+echo 'Setting up Neovim...'
+source setup-vim.sh
 
 echo 'Bundling zsh plugins...'
-
 # Set lazy load option before zsh-nvm is sourced.
 # Not sure if order actually matters.
 echo "export NVM_LAZY_LOAD=true" > ~/.zsh_plugins
-
 antibody bundle < $DIR/dot/zsh_plugins >> ~/.zsh_plugins
 antibody update
-
-echo
 
 echo 'Setting zsh default shell...'
 if ! grep -q '/usr/local/bin/zsh' '/etc/shells'; then
