@@ -15,6 +15,10 @@ hash brew 2>/dev/null || {
 }
 
 echo 'Bundling brew...'
+
+# Thuglife
+rm -f Brewfile.lock.json
+
 brew update
 brew bundle
 brew cleanup
