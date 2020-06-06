@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
-
 set -e
+source setup/util.sh
+sudo -v
+
+# Quit System Preferences to prevent overriding settings
+osascript -e 'tell application "System Preferences" to quit'
 
 # Faster trackpad and mouse
 defaults write -g com.apple.trackpad.scaling -int 3
@@ -15,20 +19,36 @@ defaults write com.apple.airplay showInMenuBarIfPresent -bool false
 # Expand save panel by default
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 
-# Show file extensions
+# Use plain text by default in TextEdit
+defaults write com.apple.TextEdit RichText -int 0
+
+# Finder
+
+defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder ShowStatusBar -bool true
+defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
 defaults write -g AppleShowAllExtensions -bool true
 
-# Disable changing file extension warning
-defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+# Use list view in all windows
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
-# Auto-hide dock
-defaults write com.apple.dock autohide -bool true
+# Keep Desktop and Documents on disk when using iCloud
+defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
 
-# Dock left
-defaults write com.apple.dock orientation left
+# Disable Finder transparency. It's supposed to improve performance?
+sudo defaults write com.apple.universalaccess reduceTransparency -bool true
 
-# Smaller dock
+# Dock
+
 defaults write com.apple.dock tilesize -int 32
+defaults write com.apple.dock orientation left
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0
+
+# Remove default dock icons
+defaults write com.apple.dock persistent-apps -array
 
 # Make tab available in modal dialogs
 defaults write -g AppleKeyboardUIMode -int 3
@@ -36,18 +56,33 @@ defaults write -g AppleKeyboardUIMode -int 3
 # Show ~/Library
 chflags nohidden ~/Library
 
-pref_edit() {
-  /usr/libexec/PlistBuddy -c "$1" ~/Library/Preferences/$2
-}
+# Disable automatic text "corrections". No thank you, Apple.
+defaults write -g NSAutomaticCapitalizationEnabled -bool false
+defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false
+defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Disable Spotlight shortcut
-pref_edit "Set AppleSymbolicHotKeys:64:enabled false" com.apple.symbolichotkeys.plist
-pref_edit "Set AppleSymbolicHotKeys:65:enabled false" com.apple.symbolichotkeys.plist
+prefe "Set AppleSymbolicHotKeys:64:enabled false" com.apple.symbolichotkeys.plist
+prefe "Set AppleSymbolicHotKeys:65:enabled false" com.apple.symbolichotkeys.plist
 
 # Disable dock hiding
-pref_edit "Set AppleSymbolicHotKeys:52:enabled false" com.apple.symbolichotkeys.plist
+prefe "Set AppleSymbolicHotKeys:52:enabled false" com.apple.symbolichotkeys.plist
 
 # Disable VoiceOver
-pref_edit "Set AppleSymbolicHotKeys:59:enabled false" com.apple.symbolichotkeys.plist
+prefe "Set AppleSymbolicHotKeys:59:enabled false" com.apple.symbolichotkeys.plist
 
-unset -f pref_edit
+defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
+defaults write com.googlecode.iterm2 PrefsCustomFolder $DOTFILES_ROOT/prefs
+
+ln -sf $DOTFILES_ROOT/prefs/com.knollsoft.Rectangle.plist ~/Library/Preferences/com.knollsoft.Rectangle.plist
+
+for app in \
+	"cfprefsd" \
+	"Dock" \
+	"Finder" \
+	"Google Chrome" \
+	"Rectangle" \
+	"SystemUIServer"; do
+	killall "$app" &> /dev/null
+done

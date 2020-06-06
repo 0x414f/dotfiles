@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
-
 set -e
-
-DIR=$(cd -P -- "$(dirname -- "$0")/.." && printf '%s\n' "$(pwd -P)")
+source setup/util.sh
+sudo -v
 
 hash gcc 2>/dev/null || {
   echo >&2 "You need to install Xcode"
@@ -15,7 +14,7 @@ hash brew 2>/dev/null || {
 }
 
 echo 'Bundling brew...'
-rm -f Brewfile.lock.json
+rm -f $DOTFILES_ROOT/Brewfile.lock.json
 brew bundle
 
 echo 'Installing node...'
@@ -25,9 +24,6 @@ nvm install node
 
 echo 'Linking dotfiles...'
 source setup/dotfiles.sh
-
-echo 'Linking prefs...'
-source setup/prefs.sh
 
 echo 'Setting preferences...'
 source setup/defaults.sh
@@ -39,7 +35,7 @@ echo 'Bundling zsh plugins...'
 # Set lazy load option before zsh-nvm is sourced.
 # Not sure if order actually matters.
 echo "export NVM_LAZY_LOAD=true" > ~/.zsh_plugins
-antibody bundle < $DIR/dot/zsh_plugins >> ~/.zsh_plugins
+antibody bundle < $DOTFILES_ROOT/dot/zsh_plugins >> ~/.zsh_plugins
 antibody update
 
 echo 'Setting zsh default shell...'
