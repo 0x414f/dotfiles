@@ -2,7 +2,7 @@
 
 set -e
 
-DIR=$(cd -P -- "$(dirname -- "$0")" && printf '%s\n' "$(pwd -P)")
+DIR=$(cd -P -- "$(dirname -- "$0")/.." && printf '%s\n' "$(pwd -P)")
 
 hash gcc 2>/dev/null || {
   echo >&2 "You need to install Xcode"
@@ -24,16 +24,16 @@ source /usr/local/opt/nvm/nvm.sh
 nvm install node
 
 echo 'Linking dotfiles...'
-source setup-dotfiles.sh
+source setup/dotfiles.sh
 
 echo 'Linking prefs...'
-source setup-prefs.sh
+source setup/prefs.sh
 
 echo 'Setting preferences...'
-source setup-defaults.sh
+source setup/defaults.sh
 
 echo 'Setting up Neovim...'
-source setup-vim.sh
+source setup/vim.sh
 
 echo 'Bundling zsh plugins...'
 # Set lazy load option before zsh-nvm is sourced.

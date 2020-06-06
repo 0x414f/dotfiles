@@ -2,7 +2,7 @@
 
 set -e
 
-DIR=$(cd -P -- "$(dirname -- "$0")" && printf '%s\n' "$(pwd -P)")
+DIR=$(cd -P -- "$(dirname -- "$0")/.." && printf '%s\n' "$(pwd -P)")
 DOT="$DIR/dot"
 
 # No thank you
