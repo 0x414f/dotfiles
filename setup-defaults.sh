@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 set -e
-sudo -v
 
 # Faster trackpad and mouse
 defaults write -g com.apple.trackpad.scaling -int 3
