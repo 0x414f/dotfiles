@@ -10,6 +10,9 @@ defaults write -g com.apple.mouse.scaling -int 3
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
+# Disable "Show mirroring options in the menu bar when available"
+defaults write com.apple.airplay showInMenuBarIfPresent -bool false
+
 # Expand save panel by default
 defaults write -g NSNavPanelExpandedStateForSaveMode -bool true
 
