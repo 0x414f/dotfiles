@@ -45,6 +45,7 @@ brew "bat"
 brew "exa"
 
 cask "alfred"
+cask "vlc"
 cask "iterm2"
 cask "quicklook-json"
 cask "qlstephen"
