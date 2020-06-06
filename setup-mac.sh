@@ -18,6 +18,11 @@ echo 'Bundling brew...'
 rm -f Brewfile.lock.json
 brew bundle
 
+echo 'Installing node...'
+export NVM_DIR="$HOME/.nvm"
+source /usr/local/opt/nvm/nvm.sh
+nvm install node
+
 echo 'Linking dotfiles...'
 source setup-dotfiles.sh
 
