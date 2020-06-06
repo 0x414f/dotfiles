@@ -26,6 +26,9 @@ brew cleanup
 echo 'Linking dotfiles...'
 source setup-dotfiles.sh
 
+echo 'Linking prefs...'
+source setup-prefs.sh
+
 echo 'Setting preferences...'
 source setup-defaults.sh
 
