@@ -8,3 +8,6 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # Prefer brew ruby
 export PATH="/usr/local/opt/ruby/bin:$PATH"
+
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
