@@ -13,8 +13,8 @@ prefe() {
 dotfiles_cleanup() {
   unset -f prefe
   unset -f dotfiles_cleanup
-  unset _DOTFILES_ROOT
-  unset _DOTFILES_SETUP_UTIL
+  unset DOTFILES_ROOT
+  unset DOTFILES_SETUP_UTIL
 }
 
 trap dotfiles_cleanup EXIT
