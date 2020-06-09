@@ -37,7 +37,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 defaults write -g NSDocumentSaveNewDocumentsToCloud -bool false
 
 # Disable Finder transparency. It's supposed to improve performance?
-sudo defaults write com.apple.universalaccess reduceTransparency -bool true
+defaults write com.apple.UniversalAccess reduceTransparency -bool true
 
 # Dock
 
