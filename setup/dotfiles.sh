@@ -19,9 +19,16 @@ ln -sf $DOT/zshrc ~/.zshrc
 ln -sf $DOT/gitignore ~/.gitignore
 ln -sf $DOT/gitconfig ~/.gitconfig
 
-mkdir -p ~/Library/Application\ Support/Code/User/
-ln -sf $DOT/settings.json ~/Library/Application\ Support/Code/User/settings.json
-ln -sf $DOT/keybindings.json ~/Library/Application\ Support/Code/User/keybindings.json
+CODE_DIR="$HOME/Library/Application Support/Code/User"
+
+mkdir -p $CODE_DIR
+
+ln -sf $DOT/settings.json "$CODE_DIR/settings.json"
+ln -sf $DOT/keybindings.json "$CODE_DIR/keybindings.json"
+
+# Why the hell are the symlinks becoming executable?
+chmod -h -x "$CODE_DIR/settings.json"
+chmod -h -x "$CODE_DIR/keybindings.json"
 
 mkdir -p ~/.config/nvim/
 ln -sf $DOT/init.vim ~/.config/nvim/init.vim

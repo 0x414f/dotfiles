@@ -9,7 +9,6 @@
 
   "workbench.iconTheme": "material-icon-theme",
   "workbench.colorTheme": "Gruvbox Dark (Soft)",
-  "workbench.activityBar.visible": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "keyboard.touchbar.ignored": [
     "workbench.action.navigateBack",
@@ -55,11 +54,9 @@
   "editor.fontWeight": "500",
 
   "window.openFilesInNewWindow": "on",
-  "window.titleBarStyle": "native",
   "window.zoomLevel": 0,
 
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  "customizeUI.titleBar": "frameless",
   "files.hotExit": "onExitAndWindowClose",
   "files.trimTrailingWhitespace": true,
   "debug.toolBarLocation": "docked",
