@@ -17,6 +17,9 @@ echo 'Bundling brew...'
 rm -f $DOTFILES_ROOT/Brewfile.lock.json
 brew bundle
 
+echo 'Finishing fzf installation...'
+$(brew --prefix)/opt/fzf/install --completion --key-bindings --no-update-rc --no-bash
+
 echo 'Installing node...'
 export NVM_DIR="$HOME/.nvm"
 source /usr/local/opt/nvm/nvm.sh

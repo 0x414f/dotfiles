@@ -6,9 +6,10 @@ for file in ~/.{path,prompt,exports,aliases,functions,extra}; do
 done;
 unset file;
 
-eval "$(jump shell zsh)"
+[ -f ~/.zsh_plugins ] && source ~/.zsh_plugins
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-source ~/.zsh_plugins
+eval "$(jump shell zsh)"
 
 # Use vi mode in command line
 bindkey -v
