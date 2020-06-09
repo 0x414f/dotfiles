@@ -66,4 +66,5 @@
   "files.hotExit": "onExitAndWindowClose",
   "files.trimTrailingWhitespace": true,
   "debug.toolBarLocation": "docked",
+  "git.autorefresh": false,
 }
