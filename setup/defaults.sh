@@ -75,6 +75,8 @@ prefe "Set AppleSymbolicHotKeys:59:enabled false" com.apple.symbolichotkeys.plis
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 defaults write com.googlecode.iterm2 PrefsCustomFolder $DOTFILES_ROOT/prefs
 
+defaults write com.google.Chrome ExternalProtocolDialogShowAlwaysOpenCheckbox -bool true
+
 ln -sf $DOTFILES_ROOT/prefs/com.knollsoft.Rectangle.plist ~/Library/Preferences/com.knollsoft.Rectangle.plist
 
 for app in \
