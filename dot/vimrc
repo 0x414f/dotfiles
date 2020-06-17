@@ -41,6 +41,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
 Plug 'w0rp/ale'
+Plug 'neoclide/jsonc.vim'
 call plug#end()
 
 set background=dark
