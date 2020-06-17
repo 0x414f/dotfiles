@@ -30,7 +30,7 @@
   aa = !git add -A && git commit -av --amend --reuse-message=HEAD
 
   # Amend the currently staged files to the latest commit
-  am = commit --amend --reuse-message=HEAD
+  mm = commit --amend --reuse-message=HEAD
 
   # Switch to a branch, creating it if necessary
   go = "!f() { git checkout \"$@\" 2> /dev/null || git checkout -b \"$@\"; }; f"
@@ -95,6 +95,8 @@
 
   # Rewrite the commit graph on gc
   writeCommitGraph = true
+
+  auto = 0
 
 [color]
 
