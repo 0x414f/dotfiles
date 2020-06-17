@@ -1,4 +1,3 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
   {
     "key": "shift+cmd+k",
@@ -8,5 +7,20 @@
   {
     "key": "shift+cmd+k",
     "command": "bookmarks.listFromAllFiles"
+  },
+  {
+    "key": "alt+cmd+k",
+    "command": "bookmarks.toggle",
+    "when": "editorTextFocus && !editorHasSelection"
+  },
+  {
+    "key": "alt+cmd+k",
+    "command": "bookmarks.toggleLabeled",
+    "when": "editorHasSelection"
+  },
+  {
+    "key": "alt+cmd+k",
+    "command": "-keybindings.editor.recordSearchKeys",
+    "when": "inKeybindings && inKeybindingsSearch"
   }
 ]
