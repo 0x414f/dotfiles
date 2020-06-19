@@ -1,5 +1,13 @@
 #!/usr/bin/env zsh
 
+function gb() {
+  preview='git diff {} $(git not-mine {}) --color=always'
+
+  git branch --no-color | \
+    sed 's/[* ]//g' | \
+    fzf -m --ansi --preview $preview
+}
+
 # Simple calculator
 function calc() {
   local result="";
