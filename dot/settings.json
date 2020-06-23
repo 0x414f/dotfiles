@@ -48,6 +48,7 @@
   "bookmarks.sideBar.expanded": true,
   "bookmarks.useWorkaroundForFormatters": true,
 
+  "editor.autoClosingBrackets": "never",
   "editor.minimap.renderCharacters": false,
   "editor.rulers": [91],
   "editor.minimap.enabled": false,
@@ -113,5 +114,5 @@
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
 }
