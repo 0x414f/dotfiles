@@ -5,7 +5,12 @@ function gb() {
 
   git branch --no-color | \
     sed 's/[* ]//g' | \
-    fzf -m --ansi --preview $preview
+    fzf-tmux -m --ansi --preview $preview
+}
+
+gd() {
+  preview='git diff $@ --color=always -- {-1}'
+  git diff $@ --name-only | fzf-tmux -m --ansi --preview $preview
 }
 
 # Simple calculator
