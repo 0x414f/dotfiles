@@ -9,7 +9,7 @@
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>alternateDefaultShortcuts</key>
-	<true/>
+	<false/>
 	<key>hideMenubarIcon</key>
 	<true/>
 	<key>launchOnLogin</key>
