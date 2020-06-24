@@ -85,7 +85,7 @@
   "gitlens.codeLens.authors.enabled": true,
   "gitlens.codeLens.recentChange.enabled": true,
   "gitlens.codeLens.includeSingleLineSymbols": true,
-  "gitlens.codeLens.scopes": ["document", "containers", "blocks"],
+  "gitlens.codeLens.scopes": ["document", "containers"],
   "gitlens.statusBar.enabled": false,
   "gitlens.views.repositories.location": "gitlens",
   "gitlens.views.fileHistory.location": "gitlens",
