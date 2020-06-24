@@ -8,14 +8,61 @@
 	<true/>
 	<key>SUSendProfileInfo</key>
 	<false/>
+	<key>allowAnyShortcut</key>
+	<true/>
 	<key>alternateDefaultShortcuts</key>
 	<false/>
+	<key>bottomHalf</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwTVSRudWxs0w0ODxAREldL
+	ZXlDb2RlViRjbGFzc11Nb2RpZmllckZsYWdzEH2AAhIADAAA0hQVFhdaJGNsYXNzbmFt
+	ZVgkY2xhc3Nlc1tNQVNTaG9ydGN1dKIYGVtNQVNTaG9ydGN1dFhOU09iamVjdAgRGiQp
+	MjdJTFFTV11kbHOBg4WKj5qjr7K+AAAAAAAAAQEAAAAAAAAAGgAAAAAAAAAAAAAAAAAA
+	AMc=
+	</data>
 	<key>hideMenubarIcon</key>
 	<true/>
 	<key>launchOnLogin</key>
 	<true/>
+	<key>leftHalf</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwTVSRudWxs0w0ODxAREldL
+	ZXlDb2RlViRjbGFzc11Nb2RpZmllckZsYWdzEHuAAhIADAAA0hQVFhdaJGNsYXNzbmFt
+	ZVgkY2xhc3Nlc1tNQVNTaG9ydGN1dKIYGVtNQVNTaG9ydGN1dFhOU09iamVjdAgRGiQp
+	MjdJTFFTV11kbHOBg4WKj5qjr7K+AAAAAAAAAQEAAAAAAAAAGgAAAAAAAAAAAAAAAAAA
+	AMc=
+	</data>
+	<key>maximize</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwTVSRudWxs0w0ODxAREldL
+	ZXlDb2RlViRjbGFzc11Nb2RpZmllckZsYWdzEAOAAhIADAAA0hQVFhdaJGNsYXNzbmFt
+	ZVgkY2xhc3Nlc1tNQVNTaG9ydGN1dKIYGVtNQVNTaG9ydGN1dFhOU09iamVjdAgRGiQp
+	MjdJTFFTV11kbHOBg4WKj5qjr7K+AAAAAAAAAQEAAAAAAAAAGgAAAAAAAAAAAAAAAAAA
+	AMc=
+	</data>
+	<key>rightHalf</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwTVSRudWxs0w0ODxAREldL
+	ZXlDb2RlViRjbGFzc11Nb2RpZmllckZsYWdzEHyAAhIADAAA0hQVFhdaJGNsYXNzbmFt
+	ZVgkY2xhc3Nlc1tNQVNTaG9ydGN1dKIYGVtNQVNTaG9ydGN1dFhOU09iamVjdAgRGiQp
+	MjdJTFFTV11kbHOBg4WKj5qjr7K+AAAAAAAAAQEAAAAAAAAAGgAAAAAAAAAAAAAAAAAA
+	AMc=
+	</data>
 	<key>subsequentExecutionMode</key>
-	<integer>1</integer>
+	<integer>0</integer>
+	<key>topHalf</key>
+	<data>
+	YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMS
+	AAGGoF8QD05TS2V5ZWRBcmNoaXZlctEICVRyb290gAGjCwwTVSRudWxs0w0ODxAREldL
+	ZXlDb2RlViRjbGFzc11Nb2RpZmllckZsYWdzEH6AAhIADAAA0hQVFhdaJGNsYXNzbmFt
+	ZVgkY2xhc3Nlc1tNQVNTaG9ydGN1dKIYGVtNQVNTaG9ydGN1dFhOU09iamVjdAgRGiQp
+	MjdJTFFTV11kbHOBg4WKj5qjr7K+AAAAAAAAAQEAAAAAAAAAGgAAAAAAAAAAAAAAAAAA
+	AMc=
+	</data>
 	<key>windowSnapping</key>
 	<integer>1</integer>
 </dict>
