@@ -22,5 +22,14 @@
     "key": "alt+cmd+k",
     "command": "-keybindings.editor.recordSearchKeys",
     "when": "inKeybindings && inKeybindingsSearch"
+  },
+  {
+    "key": "alt+f12",
+    "command": "-editor.action.peekDefinition",
+    "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor"
+  },
+  {
+    "key": "alt+f12",
+    "command": "editor.action.goToTypeDefinition"
   }
 ]
