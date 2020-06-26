@@ -55,7 +55,7 @@
   what-changed = log --name-status origin/master -m --first-parent --merges
 
 	# Get first commit that's not mine
-	not-mine = "!f() { git log --pretty='%h%x09%an' $1 | rg -m 1 -v -i 'antonio.*ochoa' | cut -c 1-10; }; f"
+	not-mine = "!f() { git log -n 1 --pretty='%h%x09%an' $1 | rg -m 1 -v -i 'antonio.*ochoa' | cut -c 1-10; }; f"
 
 [apply]
 
