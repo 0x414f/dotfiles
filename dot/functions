@@ -1,18 +1,5 @@
 #!/usr/bin/env zsh
 
-function gb() {
-  preview='git diff {} $(git not-mine {}) --color=always'
-
-  git branch --no-color | \
-    sed 's/[* ]//g' | \
-    fzf-tmux -m --ansi --preview $preview
-}
-
-gd() {
-  preview='git diff $@ --color=always -- {-1}'
-  git diff $@ --name-only | fzf-tmux -m --ansi --preview $preview
-}
-
 # Simple calculator
 function calc() {
   local result="";

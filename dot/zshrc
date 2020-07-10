@@ -1,13 +1,17 @@
 #!/usr/bin/env zsh
 
 # Load dotfiles
-for file in ~/.{path,prompt,exports,aliases,functions,extra}; do
-  [ -r "$file" ] && [ -f "$file" ] && source "$file";
-done;
-unset file;
+source ~/.path
+source ~/.prompt
+source ~/.exports
+source ~/.aliases
+source ~/.functions
+source ~/.extra
 
-[ -f ~/.zsh_plugins ] && source ~/.zsh_plugins
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source ~/.dot/gitrc
+
+source ~/.zsh_plugins
+source ~/.fzf.zsh
 
 eval "$(jump shell zsh)"
 

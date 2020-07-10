@@ -10,9 +10,6 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
 
-# Shortcuts
-alias g="git"
-
 # Enable aliases to be sudo’ed
 alias sudo="sudo "
 

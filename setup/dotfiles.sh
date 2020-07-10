@@ -5,9 +5,6 @@ set -e
 DIR=$(cd -P -- "$(dirname -- "$0")/.." && printf '%s\n' "$(pwd -P)")
 DOT="$DIR/dot"
 
-# No thank you
-touch ~/.hushlogin
-
 ln -sf $DOT/aliases ~/.aliases
 ln -sf $DOT/exports ~/.exports
 ln -sf $DOT/functions ~/.functions
@@ -16,8 +13,6 @@ ln -sf $DOT/prompt ~/.prompt
 ln -sf $DOT/tmux.conf ~/.tmux.conf
 ln -sf $DOT/vimrc ~/.vimrc
 ln -sf $DOT/zshrc ~/.zshrc
-ln -sf $DOT/gitignore ~/.gitignore
-ln -sf $DOT/gitconfig ~/.gitconfig
 
 CODE_DIR="$HOME/Library/Application Support/Code/User"
 
