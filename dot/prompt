@@ -47,6 +47,5 @@ prompt_orange='%F{208}';
 prompt_white='%F{15}';
 
 PROMPT=$'\n'
-PROMPT+='${prompt_orange}%n ${prompt_white}at ${prompt_yellow}%m '
-PROMPT+='${prompt_red}%D{%Y-%m-%f} %D{%H:%M:%S} ${prompt_white}in ${prompt_green}%~ $(git_prompt)'$'\n'
+PROMPT+='${prompt_green}%~ $(git_prompt)'$'\n'
 PROMPT+='${prompt_white}> %F{reset}'
