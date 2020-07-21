@@ -1,5 +1,14 @@
 #!/usr/bin/env zsh
 
+function grab() {
+	if [[ $# -eq 2 ]] ; then
+		replace=$2
+	else
+		replace='$1'
+	fi
+	rg --color=never ".*$1.*" -r $replace
+}
+
 # Simple calculator
 function calc() {
   local result="";
