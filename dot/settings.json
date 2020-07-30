@@ -56,6 +56,29 @@
     },
   ],
 
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["u"],
+      "after": [],
+      "commands": [
+        {
+          "command": "undo",
+          "args": [],
+        },
+      ],
+    },
+    {
+      "before": ["<C-r>"],
+      "after": [],
+      "commands": [
+        {
+          "command": "redo",
+          "args": [],
+        },
+      ],
+    },
+  ],
+
   "bookmarks.label.suggestion": "useWhenSelected",
   "bookmarks.navigateThroughAllFiles": true,
   "bookmarks.saveBookmarksInProject": true,
@@ -74,13 +97,16 @@
   "editor.fontFamily": "Monaco",
   "editor.fontWeight": "500",
 
+  "window.restoreWindows": "all",
   "window.openFilesInNewWindow": "on",
   "window.zoomLevel": 0,
 
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "files.hotExit": "onExitAndWindowClose",
   "files.trimTrailingWhitespace": true,
+  "files.restoreUndoStack": true,
+
   "debug.toolBarLocation": "docked",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
   "git.autorefresh": false,
   "git.autofetch": false,
