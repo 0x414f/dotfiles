@@ -12,8 +12,8 @@ export EDITOR="nvim";
 
 # History
 export HISTFILE="$HOME/.zsh_history"
-export HISTSIZE=32768;
-export SAVEHIST=32768;
+export HISTSIZE=65536;
+export SAVEHIST=65536;
 export HISTORY_IGNORE="(ls|cd|pwd|exit|cd ..|..|...|....|date|j *)"
 
 # Prefer US English and use UTF-8
