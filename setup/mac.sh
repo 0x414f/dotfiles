@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
+
 set -e
-source setup/util.sh
 sudo -v
 
 hash gcc 2>/dev/null || {
@@ -14,9 +14,7 @@ hash brew 2>/dev/null || {
 }
 
 echo 'Bundling brew...'
-rm -f $DOTFILES_ROOT/Brewfile.lock.json
-brew bundle
-rm -f $DOTFILES_ROOT/Brewfile.lock.json
+brew bundle --no-lock
 
 echo 'Finishing fzf installation...'
 $(brew --prefix)/opt/fzf/install --completion --key-bindings --no-update-rc --no-bash

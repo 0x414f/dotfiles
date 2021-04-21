@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
+
 set -e
-source setup/util.sh
 sudo -v
+
+cd -P -- "$(dirname -- "$0")/.."
+dot="$(pwd -P)"
 
 # Quit System Preferences to prevent overriding settings
 osascript -e 'tell application "System Preferences" to quit'
@@ -62,22 +65,26 @@ defaults write -g NSAutomaticPeriodSubstitutionEnabled -bool false
 defaults write -g NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write -g NSAutomaticSpellingCorrectionEnabled -bool false
 
+pref() {
+	/usr/libexec/PlistBuddy -c "$1" ~/Library/Preferences/$2
+}
+
 # Disable Spotlight shortcut
-prefe "Set AppleSymbolicHotKeys:64:enabled false" com.apple.symbolichotkeys.plist
-prefe "Set AppleSymbolicHotKeys:65:enabled false" com.apple.symbolichotkeys.plist
+pref "Set AppleSymbolicHotKeys:64:enabled false" com.apple.symbolichotkeys.plist
+pref "Set AppleSymbolicHotKeys:65:enabled false" com.apple.symbolichotkeys.plist
 
 # Disable dock hiding
-prefe "Set AppleSymbolicHotKeys:52:enabled false" com.apple.symbolichotkeys.plist
+pref "Set AppleSymbolicHotKeys:52:enabled false" com.apple.symbolichotkeys.plist
 
 # Disable VoiceOver
-prefe "Set AppleSymbolicHotKeys:59:enabled false" com.apple.symbolichotkeys.plist
+pref "Set AppleSymbolicHotKeys:59:enabled false" com.apple.symbolichotkeys.plist
 
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-defaults write com.googlecode.iterm2 PrefsCustomFolder $DOTFILES_ROOT/prefs
+defaults write com.googlecode.iterm2 PrefsCustomFolder $dot/prefs
 
 defaults write com.google.Chrome ExternalProtocolDialogShowAlwaysOpenCheckbox -bool true
 
-ln -sf $DOTFILES_ROOT/prefs/com.knollsoft.Rectangle.plist ~/Library/Preferences/com.knollsoft.Rectangle.plist
+ln -sf $dot/prefs/com.knollsoft.Rectangle.plist ~/Library/Preferences/com.knollsoft.Rectangle.plist
 
 for app in \
 	"cfprefsd" \
