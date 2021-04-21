@@ -45,3 +45,5 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 alias reload="exec $SHELL -l"
 
 alias nvm="fnm"
+
+alias quit_code="osascript -e 'quit app \"Visual Studio Code\"'"
