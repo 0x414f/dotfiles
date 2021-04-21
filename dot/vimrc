@@ -35,8 +35,6 @@ Plug 'hhvm/vim-hack'
 Plug 'pangloss/vim-javascript'
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-ruby/vim-ruby'
@@ -49,8 +47,6 @@ let g:gruvbox_contrast_dark = 'medium'
 syntax on
 colorscheme gruvbox
 
-" Add the g flag to search/replace by default
-set gdefault
 " Always show the gutter. Stops jittering on edits.
 set signcolumn=yes
 
@@ -67,6 +63,7 @@ set colorcolumn=91
 set tabstop=2
 set shiftwidth=2
 set softtabstop=2
+set expandtab
 set smarttab
 
 " No error sounds
@@ -87,21 +84,14 @@ set wrap linebreak
 set wildmenu
 set wildmode=list:longest,full
 
-" Automatic completion
-let g:ale_completion_enabled = 1
 " Include the linter name (e.g. 'hack' or 'hhast'), code, and message in errors
 let g:ale_echo_msg_format = '[%linter%]% [code]% %s'
-" Enable HHAST - this has security implications (see below)
-let g:ale_linters = { 'hack': ['hack', 'hhast', 'hackfmt'] }
 
 let g:ale_fix_on_save = 1
-
-" Enable completion where available.
 let g:ale_completion_enabled = 1
 
 let g:ale_fixers = {
-  \ '*': ['remove_trailing_lines', 'trim_whitespace', 'prettier'],
-  \ 'hack': ['hackfmt']
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
 \}
 
 nnoremap <silent> gt :ALEHover<CR>
