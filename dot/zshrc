@@ -14,6 +14,7 @@ source ~/.zsh_plugins
 source ~/.fzf.zsh
 
 eval "$(jump shell zsh)"
+eval "$(rbenv init -)"
 
 # Use vi mode in command line
 bindkey -v

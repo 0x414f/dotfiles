@@ -3,13 +3,10 @@
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
 
-# Prefer brew python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
-# Prefer brew ruby
-export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
 
-# Rust
 export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="$HOME/.bin/:$PATH"
