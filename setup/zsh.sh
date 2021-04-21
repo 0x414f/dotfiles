@@ -3,6 +3,7 @@
 antibody bundle < <(
   echo "zsh-users/zsh-completions"
   echo "zsh-users/zsh-autosuggestions"
+  echo "mafredri/zsh-async"
 ) > ~/.zsh_plugins
 
 antibody update

@@ -1,8 +1,10 @@
 #!/usr/bin/env zsh
 
-function git_prompt() {
+_git_prompt() {
+  [ -n "$1" ] && cd "$1"
+
   # Check if the current directory is in a Git repository.
-  git rev-parse --is-inside-work-tree &>/dev/null || return;
+  git rev-parse --is-inside-work-tree &>/dev/null || return
 
   local git=''
   local branch=''
@@ -18,24 +20,24 @@ function git_prompt() {
 
   # Check for uncommitted changes in the index.
   if ! $(git diff --quiet --ignore-submodules --cached); then
-    git+='+';
+    git+='+'
   fi;
   # Check for unstaged changes.
   if ! $(git diff-files --quiet --ignore-submodules --); then
-    git+='!';
+    git+='!'
   fi;
   # Check for untracked files.
   if [ -n "$(git ls-files --others --exclude-standard)" ]; then
-    git+='?';
+    git+='?'
   fi;
   # Check for stashed files.
   if $(git rev-parse --verify refs/stash &>/dev/null); then
-    git+='$';
-  fi;
+    git+='$'
+  fi
 
-  [ -n "${git}" ] && git="[${git}]";
+  [ -n "${git}" ] && git="[${git}]"
 
-  echo -n "${prompt_white}on ${prompt_purple}${branch} ${prompt_blue}${git}";
+  echo -n "${prompt_white}on ${prompt_purple}${branch} ${prompt_blue}${git}"
 }
 
 prompt_red='%F{167}';
@@ -46,6 +48,26 @@ prompt_purple='%F{175}';
 prompt_orange='%F{208}';
 prompt_white='%F{15}';
 
+_git_prompt_reset() {
+  GIT_PROMPT="$3"
+  zle reset-prompt
+}
+
+_git_prompt_hook() {
+  async_flush_jobs git_prompt
+  GIT_PROMPT=""
+  async_job git_prompt _git_prompt $PWD
+}
+
+source ~/async.zsh
+
+async_init
+async_start_worker git_prompt
+async_register_callback git_prompt _git_prompt_reset
+
+autoload -U add-zsh-hook
+add-zsh-hook precmd _git_prompt_hook
+
 PROMPT=$'\n'
-PROMPT+='${prompt_green}%~ $(git_prompt)'$'\n'
+PROMPT+='${prompt_green}%~ ${GIT_PROMPT}'$'\n'
 PROMPT+='${prompt_white}> %F{reset}'
