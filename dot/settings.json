@@ -8,7 +8,7 @@
     "**/node_modules": true,
     "**/package-lock.json": true,
     "**/tmp": true,
-    "**/yarn.lock": true,
+    "**/yarn.lock": true
   },
 
   "search.exclude": {
@@ -18,17 +18,16 @@
     "**/node_modules": true,
     "**/package-lock.json": true,
     "**/tmp": true,
-    "**/yarn.lock": true,
+    "**/yarn.lock": true
   },
 
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.colorTheme": "Gruvbox Dark (Soft)",
+  "workbench.iconTheme": "file-icons",
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "keyboard.touchbar.ignored": [
     "workbench.action.navigateBack",
     "workbench.action.navigateForward",
     "workbench.action.debug.start",
-    "workbench.action.debug.run",
+    "workbench.action.debug.run"
   ],
 
   "telemetry.enableTelemetry": false,
@@ -46,14 +45,14 @@
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
-      "after": ["<Esc>"],
-    },
+      "after": ["<Esc>"]
+    }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
       "before": ["p"],
-      "after": ["p", "g", "v", "y"],
-    },
+      "after": ["p", "g", "v", "y"]
+    }
   ],
 
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -63,9 +62,9 @@
       "commands": [
         {
           "command": "undo",
-          "args": [],
-        },
-      ],
+          "args": []
+        }
+      ]
     },
     {
       "before": ["<C-r>"],
@@ -73,10 +72,10 @@
       "commands": [
         {
           "command": "redo",
-          "args": [],
-        },
-      ],
-    },
+          "args": []
+        }
+      ]
+    }
   ],
 
   "bookmarks.label.suggestion": "useWhenSelected",
@@ -144,23 +143,23 @@
   "explorer.confirmDragAndDrop": false,
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": true
   },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true,
+    "editor.formatOnSave": false
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-  },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
