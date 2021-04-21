@@ -24,7 +24,7 @@ brew "git"
 brew "git-lfs"
 brew "ruby"
 brew "python"
-brew "nvm"
+brew "fnm"
 
 # Install other useful binaries.
 brew "getantibody/tap/antibody"

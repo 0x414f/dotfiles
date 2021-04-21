@@ -22,9 +22,9 @@ echo 'Finishing fzf installation...'
 $(brew --prefix)/opt/fzf/install --completion --key-bindings --no-update-rc --no-bash
 
 echo 'Installing node...'
-export NVM_DIR="$HOME/.nvm"
-source /usr/local/opt/nvm/nvm.sh
-nvm install node
+eval "$(fnm env)"
+fnm install 15
+fnm default 15
 
 echo 'Setting up VSCode...'
 source setup/vscode.sh
