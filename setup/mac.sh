@@ -38,18 +38,5 @@ source setup/defaults.sh
 echo 'Setting up Neovim...'
 source setup/vim.sh
 
-echo 'Bundling zsh plugins...'
-# Set lazy load option before zsh-nvm is sourced.
-# Not sure if order actually matters.
-echo "export NVM_LAZY_LOAD=true" > ~/.zsh_plugins
-antibody bundle < $DOTFILES_ROOT/dot/zsh_plugins >> ~/.zsh_plugins
-antibody update
-
-echo 'Setting zsh default shell...'
-if ! grep -q '/usr/local/bin/zsh' '/etc/shells'; then
-  sudo sh -c "echo '/usr/local/bin/zsh' >> /etc/shells"
-fi
-
-if [[ "$SHELL" != '/usr/local/bin/zsh' ]]; then
-  chsh -s /usr/local/bin/zsh
-fi
+echo 'Setting up Zsh...'
+source setup/zsh.sh
