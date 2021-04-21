@@ -40,3 +40,6 @@ source setup/vim.sh
 
 echo 'Setting up Zsh...'
 source setup/zsh.sh
+
+echo 'Updating ~/.bin...'
+source setup/bin.sh

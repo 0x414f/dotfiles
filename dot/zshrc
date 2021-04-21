@@ -84,3 +84,7 @@ zle-line-init() {
 zle -N zle-line-init
 echo -ne '\e[6 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[6 q' ;} # Use beam shape cursor for each new prompt.
+
+ctrl-f-widget() ctrl-f
+zle -N ctrl-f-widget
+bindkey '^F' ctrl-f-widget
