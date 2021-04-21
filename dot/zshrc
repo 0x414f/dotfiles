@@ -8,7 +8,7 @@ source ~/.aliases
 source ~/.functions
 source ~/.extra
 
-source ~/.dot/gitrc
+source ~/.dot/git.zsh
 
 source ~/.zsh_plugins
 source ~/.fzf.zsh
