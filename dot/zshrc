@@ -15,6 +15,7 @@ source ~/.fzf.zsh
 
 eval "$(jump shell zsh)"
 eval "$(rbenv init -)"
+eval "$(fnm env)"
 
 # Use vi mode in command line
 bindkey -v

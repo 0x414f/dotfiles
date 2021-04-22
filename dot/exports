@@ -31,6 +31,3 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications";
 
 # Set less tab size to 2
 export LESS="-F -X -R --tabs 2 $LESS"
-
-# Fast Node Manager exports
-eval "$(fnm env)"
