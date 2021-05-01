@@ -59,7 +59,7 @@ _git_prompt_hook() {
   async_job git_prompt _git_prompt $PWD
 }
 
-source ~/async.zsh
+autoload -Uz async
 
 async_init
 async_start_worker git_prompt

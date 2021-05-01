@@ -1,16 +1,15 @@
 #!/usr/bin/env zsh
 
-# Load dotfiles
+# Plugins may be used in other dotfiles. Load it first.
+source ~/.zsh_plugins
+
 source ~/.path
 source ~/.prompt
 source ~/.exports
 source ~/.aliases
 source ~/.functions
 source ~/.extra
-
 source ~/.dot/git.zsh
-
-source ~/.zsh_plugins
 source ~/.fzf.zsh
 
 eval "$(jump shell zsh)"
