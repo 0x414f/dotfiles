@@ -45,6 +45,7 @@ brew "jump"
 brew "jq"
 brew "bat"
 brew "exa"
+brew "rbenv"
 
 cask "alfred"
 cask "vlc"
