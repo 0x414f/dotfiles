@@ -15,7 +15,9 @@
 
   fr = !git f && git r
 
-  p = push -f origin head
+  fp = push -f origin head
+
+  p = push origin head
 
   # Show the diff between the latest commit and the current state
   d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
