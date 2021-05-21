@@ -85,7 +85,7 @@
   splitIndex = true
   untrackedCache = true
 
-  ignorecase = true
+  ignorecase = false
 
 [index]
 
