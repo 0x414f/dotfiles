@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+if git show-ref --verify --quiet refs/remotes/origin/master; then
+  main='master'
+elif git show-ref --verify --quiet refs/remotes/origin/main; then
+  main='main'
+else
+  >&2 echo "git-main: main branch not found"
+  exit 1
+fi
+
+if [ "$1" != '-q' ]; then
+  printf "$main"
+fi

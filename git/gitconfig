@@ -9,9 +9,9 @@
   # View the current working tree status using the short format
   s = status -s
 
-  r = rebase origin/master
+  r = !"git-main -q && git rebase origin/\"$(git-main)\""
 
-  f = fetch origin master
+  f = !"git-main -q && git fetch origin \"$(git-main)\""
 
   fr = !git f && git r
 
@@ -169,6 +169,10 @@
 [grep]
 
   lineNumber = true
+
+[init]
+
+	defaultBranch = main
 
 [user]
 
